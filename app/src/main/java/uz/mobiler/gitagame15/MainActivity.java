@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView timerTextView;
     private long startTime = 0;
     private Handler timerHandler = new Handler();
-    // Updates the timer every 100 milliseconds
     private Runnable timerRunnable = new Runnable() {
         @Override
         public void run() {
@@ -72,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
             timerTextView.setText(String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds));
 
-            // Schedule the runnable to run again after 100ms
             timerHandler.postDelayed(this, 100);
         }
     };
@@ -95,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
 //            return insets;
 //        });
 
-        // // /// /// / ///  / ///// // /
         pref = this.getSharedPreferences("MyGame", Context.MODE_PRIVATE);
         timerTextView = findViewById(R.id.time);
         LinearLayout container = findViewById(R.id.container);
@@ -139,17 +136,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < SIZE; i++) {
             LinearLayout row = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.item_row, container, false);
             for (int j = 0; j < SIZE; j++) {
-                //add to row
-                //arrow[i][j] = item;
                 AppCompatButton item = (AppCompatButton) LayoutInflater.from(this).inflate(R.layout.item_puzzle, row, false);
                 row.addView(item);
-//                AppCompatButton b = (AppCompatButton) row.getChildAt(j);
-//                b.setOnClickListener(this::onClick);
-//                Coordinator currentCoordinate = new Coordinator(i, j);
-//                b.setTag(currentCoordinate);
-//                texts[i][j] = b;
             }
-            //add to puzzle container
             container.addView(row);
             Log.v("CONTAINER", container.getChildCount() + "");
         }
@@ -164,14 +153,9 @@ public class MainActivity extends AppCompatActivity {
                 b.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        // Remove the listener to avoid multiple calls
                         b.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                        // Get the button's height
                         int buttonHeight = b.getHeight();
-                        // Calculate a suitable text size based on height
-                        // You can adjust the scaling factor (e.g., 0.5f) as needed
                         float newTextSize = buttonHeight * 0.4f;
-                        // Set the text size in SP (Scaled Pixels)
                         b.setTextSize(TypedValue.COMPLEX_UNIT_PX, newTextSize);
                     }
                 });
@@ -180,12 +164,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
         Log.v("AAAAA", "IIIIIIIII");
-//        onStart();
     }
 
     private void loadData(boolean shuffle) {
-
-
         if (shuffle) {
             startTime = System.currentTimeMillis();
             Collections.shuffle(values);
@@ -316,7 +297,6 @@ public class MainActivity extends AppCompatActivity {
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.setView(layout);
             toast.show();
-//            Toast.makeText(this, "Press RESET to continue!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -337,8 +317,6 @@ public class MainActivity extends AppCompatActivity {
         int inv_count = 0;
         for (int i = 0; i < SIZE * SIZE - 2; i++) {
             for (int j = i + 1; j < SIZE * SIZE - 1; j++) {
-                // count pairs(arr[i], arr[j]) such that
-                // i < j but arr[i] > arr[j]
                 if (!Objects.equals(arr.get(j), 0) && !Objects.equals(arr.get(i), 0)
                         && Integer.parseInt(arr.get(i).toString()) > Integer.parseInt(arr.get(j).toString()))
                     inv_count++;
@@ -412,7 +390,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         SIZE = intent.getIntExtra("Size", pref.getInt("S", 4));
-//        pref = this.getSharedPreferences("MyGame", Context.MODE_PRIVATE);
         if (!landscapeChanged && (SIZE != 0 || pref.getString("B", "").equals(""))) {
             Log.v("AAAAA", "New");
             emptyCoordinate = new Coordinator(rd.nextInt(SIZE), rd.nextInt(SIZE));
@@ -441,26 +418,11 @@ public class MainActivity extends AppCompatActivity {
             loadData(false);
 
         }
-//        if (s.length < 1) {
-//            emptyCoordinate = new Coordinator(rd.nextInt(4), rd.nextInt(4));
-//            generateNumbers();
-//            loadData(true);
-//        } else {
-//            emptyCoordinate = new Coordinator(Integer.parseInt(c[0]), Integer.parseInt(c[1]));
-//            for (int i = 0; i < 16; i++) {
-//                if (Objects.equals(s[i], "")) continue;
-//                values.add(Integer.parseInt(s[i]));
-//            }
-//            loadData(false);
-//        }
-//        generateNumbers();
-//        loadData(true);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-//        pref = this.getSharedPreferences("MyGame", Context.MODE_PRIVATE);
         pref.edit().putString("time", timerTextView.getText().toString()).apply();
         timerHandler.removeCallbacks(timerRunnable);
 

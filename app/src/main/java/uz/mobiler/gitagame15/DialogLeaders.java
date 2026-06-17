@@ -31,7 +31,6 @@ public class DialogLeaders extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Inflate your custom layout here
         return inflater.inflate(R.layout.dialog_leaders, container, false);
     }
 
@@ -42,20 +41,16 @@ public class DialogLeaders extends DialogFragment {
         if (orientation == ORIENTATION_LANDSCAPE) {
             if (getDialog() != null && getDialog().getWindow() != null) {
                 getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//            // **Crucial step**: Make the dialog background transparent to remove borders/margins
 
                 InsetDrawable inset = new InsetDrawable(new ColorDrawable(Color.TRANSPARENT), dpToPx(29), dpToPx(0), dpToPx(29), dpToPx(0));
                 getDialog().getWindow().setBackgroundDrawable(inset);
-//            getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
         } else {
             if (getDialog() != null && getDialog().getWindow() != null) {
                 getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//            // **Crucial step**: Make the dialog background transparent to remove borders/margins
 
                 InsetDrawable inset = new InsetDrawable(new ColorDrawable(Color.TRANSPARENT), dpToPx(19), dpToPx(25), dpToPx(19), dpToPx(25));
                 getDialog().getWindow().setBackgroundDrawable(inset);
-//            getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
         }
 
@@ -65,7 +60,6 @@ public class DialogLeaders extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setCancelable(true);
-        // Access and interact with views here
         FrameLayout okBtn = view.findViewById(R.id.ok_btn);
         RecyclerView rv = view.findViewById(R.id.rv);
 
@@ -89,7 +83,6 @@ public class DialogLeaders extends DialogFragment {
         });
     }
 
-    // Optional: Hide the title feature if it's present by default
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

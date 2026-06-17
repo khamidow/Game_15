@@ -61,7 +61,6 @@ public class ModelData {
                 '}';
     }
 
-    // Builder pattern for convenience (optional but recommended)
     public static Builder builder() {
         return new Builder();
     }

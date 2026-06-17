@@ -44,7 +44,6 @@ public class DialogVictory extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Inflate your custom layout here
         return inflater.inflate(R.layout.dialog_win, container, false);
     }
 
@@ -55,20 +54,16 @@ public class DialogVictory extends DialogFragment {
         if (orientation == ORIENTATION_LANDSCAPE) {
             if (getDialog() != null && getDialog().getWindow() != null) {
                 getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//            // **Crucial step**: Make the dialog background transparent to remove borders/margins
 
                 InsetDrawable inset = new InsetDrawable(new ColorDrawable(Color.TRANSPARENT), dpToPx(19), dpToPx(0), dpToPx(19), dpToPx(0));
                 getDialog().getWindow().setBackgroundDrawable(inset);
-//            getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
         } else {
             if (getDialog() != null && getDialog().getWindow() != null) {
                 getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//            // **Crucial step**: Make the dialog background transparent to remove borders/margins
 
                 InsetDrawable inset = new InsetDrawable(new ColorDrawable(Color.TRANSPARENT), dpToPx(19), dpToPx(25), dpToPx(19), dpToPx(25));
                 getDialog().getWindow().setBackgroundDrawable(inset);
-//            getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             }
         }
 
@@ -78,7 +73,6 @@ public class DialogVictory extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setCancelable(true);
-        // Access and interact with views here
         TextView number1 = view.findViewById(R.id.number_1);
         TextView number2 = view.findViewById(R.id.number_2);
         TextView moves = view.findViewById(R.id.count);
@@ -111,7 +105,6 @@ public class DialogVictory extends DialogFragment {
         });
     }
 
-    // Optional: Hide the title feature if it's present by default
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {

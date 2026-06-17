@@ -14,7 +14,6 @@ import java.util.List;
 public class RvAdapter1 extends RecyclerView.Adapter<RvAdapter1.VH> {
 
     private final List<ModelData> list;
-
     public RvAdapter1(List<ModelData> list) {
         this.list = list;
     }
