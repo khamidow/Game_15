@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/dialog_info_bcg" />
+
+    <ScrollView
+        style="@style/your_style_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="39dp"
+        android:layout_marginTop="79dp"
+        android:layout_marginBottom="49dp"
+        app:layout_constraintBottom_toBottomOf="@id/img"
+        app:layout_constraintLeft_toLeftOf="@id/img"
+        app:layout_constraintRight_toRightOf="@id/img"
+        app:layout_constraintTop_toTopOf="@id/img">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="9dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/cathra"
+                android:text="About App"
+                android:textColor="#78929b"
+                android:textSize="33sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="19dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/simple_line" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="9dp"
+                android:fontFamily="@font/adorgan"
+                android:letterSpacing="0.13"
+                android:lineHeight="27dp"
+                android:text="Puzzle 15 is a classic sliding block game with 15 numbered tiles in a 4x4 grid, leaving one empty space.\n\nThe goal of the game is to slide tiles into numerical order (from 1 to 15) using only horizontal or vertical moves, requiring logic, planning and patience.\n\nI created this game with different difficulty levels.\n• First one Easy level which has 8 tiles (3x3)\n• Second one Normal level which has 15 tiles (4x4)\n• Third one Hard level which has 24 tiles (5x5)\n\nFrom GITA Developers Academy student:\nKhamidov Abdulqodir\n\nIf you have any suggestions or requests:"
+                android:textColor="#78929b"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/globe_icon" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/averia_libre_bold"
+                    android:text="abdulqodirkhamidov"
+                    android:textColor="#78929b"
+                    android:textSize="19sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="19dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="5dp"
+                    android:padding="0.5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/contact_icon" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/averia_libre_bold"
+                    android:text="(90) 910-09-60"
+                    android:textColor="#78929b"
+                    android:textSize="19sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

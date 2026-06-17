@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_2" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:background="@drawable/back_ll"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space">
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/count_frame"
+        android:layout_width="131dp"
+        android:layout_height="51dp"
+        android:layout_margin="13dp"
+        android:background="@drawable/clipper_bcg"
+        android:clipToOutline="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_3" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:src="@drawable/move_icon" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="3dp"
+            android:fontFamily="@font/ebon"
+            android:gravity="center"
+            android:letterSpacing="0.09"
+            android:paddingHorizontal="15dp"
+            android:text="0"
+            android:textColor="#90adba"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_time"
+        android:layout_width="131dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/clipper_bcg"
+        android:clipToOutline="true"
+        app:layout_constraintLeft_toLeftOf="@id/count_frame"
+        app:layout_constraintRight_toRightOf="@id/count_frame"
+        app:layout_constraintTop_toBottomOf="@id/count_frame">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_3" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:src="@drawable/compass_time" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="3dp"
+            android:fontFamily="@font/adorgan"
+            android:gravity="center"
+            android:letterSpacing="0.09"
+            android:paddingHorizontal="15dp"
+            android:text="00:00"
+            android:textColor="#90adba"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_re_so"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintLeft_toLeftOf="@id/frame_time"
+        app:layout_constraintRight_toRightOf="@id/frame_time"
+        app:layout_constraintTop_toBottomOf="@id/frame_time">
+
+
+        <ImageView
+            android:id="@+id/sound"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_bcg"
+            android:padding="10dp"
+            android:src="@drawable/mute"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/reset_btn"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_bcg"
+            android:padding="10dp"
+            android:src="@drawable/refresh"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_margin="13dp"
+        android:background="@drawable/round_bcg"
+        android:paddingVertical="11dp"
+        android:paddingRight="4.5dp"
+        android:src="@drawable/back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space" />
+
+    <!--<androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@drawable/reset_bcg"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Reset"
+        android:textColor="#e6eed9"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/container"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
